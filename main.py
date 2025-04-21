@@ -3,7 +3,7 @@ import audioop
 from discord.ext import commands
 import asyncio
 from discord.ext.commands import has_permissions
-
+import os
 
 client = commands.Bot(command_prefix=".", intents=discord.Intents.all())
 client.remove_command("help")
@@ -41,4 +41,6 @@ async def play(ctx, game):
     await client.change_presence(activity=discord.Game(name=game))
     await ctx.channel.send("Ustawiono staus na Play " game)
 
+token = os.getenv("MTM1NzA0NDg3Njg1MTU0NDA4NA.GWVVGc.Zl8UZFtK2X0w6RrX0J3scsXZW_m71cnA30LwDI")
+client.run(tron)
 client.run("MTM1NzA0NDg3Njg1MTU0NDA4NA.GWVVGc.Zl8UZFtK2X0w6RrX0J3scsXZW_m71cnA30LwDI")
