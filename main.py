@@ -1,4 +1,6 @@
 from keep_alive import keep_alive
+from flask import Flask
+from threading import Thread
 import discord
 import audioop
 from discord.ext import commands
@@ -6,6 +8,9 @@ import asyncio
 from discord.ext.commands import has_permissions
 import os
 
+app = Flask('')
+
+@app.route('/')
 
 keep_alive()
 
@@ -44,7 +49,6 @@ async def kick(ctx, member : discord.Member, reason="Zostałeś wyrzucony!"):
 @client.command()
 async def play(ctx, game):
     await client.change_presence(activity=discord.Game(name=game))
-    await ctx.channel.send("Ustawiono staus na Play " game)
 
 token = os.getenv("MTM1NzA0NDg3Njg1MTU0NDA4NA.GWVVGc.Zl8UZFtK2X0w6RrX0J3scsXZW_m71cnA30LwDI")
 client.run(tron)
