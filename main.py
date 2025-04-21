@@ -1,9 +1,14 @@
+from keep_alive import keep_alive
 import discord
 import audioop
 from discord.ext import commands
 import asyncio
 from discord.ext.commands import has_permissions
 import os
+
+
+keep_alive()
+
 
 client = commands.Bot(command_prefix=".", intents=discord.Intents.all())
 client.remove_command("help")
